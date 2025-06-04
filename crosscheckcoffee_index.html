@@ -7,20 +7,38 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Custom vintage textures and fonts can be added here */
+    /* Custom vintage textures and fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Premium+Font&display=swap');
     body {
-      background-color: #0F0F0F; /* Dark locker room vibe */
-      color: #F8F8F8;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-    }
-    .woodgrain {
-      background-image: url('https://example.com/woodgrain-texture.jpg'); /* Replace with actual woodgrain texture URL */
+      background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1950&q=80'); /* Woodgrain texture from Unsplash */
       background-size: cover;
+      background-position: center;
+      color: #F8F8F8;
+      font-family: 'Premium Font', 'Helvetica Neue', Arial, sans-serif;
     }
+    /* Ice texture overlay */
     .ice-overlay {
-      background-image: url('https://example.com/ice-overlay.png'); /* Replace with actual ice overlay URL */
+      background-image: url('https://images.unsplash.com/photo-1602376720081-a5a3da7e50c4?auto=format&fit=crop&w=1950&q=80'); /* Ice overlay from Unsplash */
       background-size: cover;
       opacity: 0.15;
+    }
+    /* Header styling with vintage hockey flair */
+    header {
+      background: rgba(20,20,20,0.8);
+      border-bottom: 4px solid #FFD700; /* Glitter gold accent */
+    }
+    header a {
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    /* Hero section tint to let woodgrain show through */
+    .hero-bg {
+      background: rgba(0, 0, 0, 0.4);
+    }
+    /* Vintage hockey border for sections */
+    .vintage-border {
+      border: 2px solid #FFD700;
+      border-radius: 0.5rem;
     }
   </style>
 </head>
@@ -29,14 +47,17 @@
   <div class="ice-overlay absolute inset-0 pointer-events-none"></div>
 
   <!-- Navigation Bar -->
-  <header class="w-full bg-gray-900 bg-opacity-90 shadow-lg fixed z-50">
+  <header class="w-full shadow-lg fixed z-50 vintage-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <div class="flex-shrink-0">
-          <!-- Placeholder for Logo -->
-          <a href="#home" class="text-2xl font-bold text-yellow-300">CrossCheck Coffee</a>
+          <!-- Logo with hockey stick icon -->
+          <a href="#home" class="text-2xl font-bold text-yellow-300 flex items-center">
+            <svg class="h-6 w-6 mr-2 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"><path d="M2 2l16 8-16 8v-5l11-3-11-3V2z"/></svg>
+            CrossCheck Coffee
+          </a>
         </div>
-        <nav class="hidden md:flex space-x-8">
+        <nav class="hidden md:flex space-x-8 text-gray-200">
           <a href="#about" class="hover:text-yellow-300 px-3 py-2">About</a>
           <a href="#blends" class="hover:text-yellow-300 px-3 py-2">Our Blends</a>
           <a href="#subscribe" class="hover:text-yellow-300 px-3 py-2">The Rec League Crew</a>
@@ -62,18 +83,16 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="h-screen flex items-center justify-center woodgrain bg-blend-overlay relative">
+  <section id="home" class="h-screen flex items-center justify-center hero-bg relative">
     <div class="text-center z-10 px-4">
       <h1 class="text-6xl md:text-8xl font-extrabold text-yellow-400 uppercase drop-shadow-lg">CrossCheck Coffee</h1>
       <p class="mt-4 text-xl md:text-2xl text-white">Veteran Owned | Hockey Fueled</p>
       <a href="#blends" class="mt-8 inline-block bg-yellow-300 text-gray-900 font-semibold py-3 px-6 rounded-lg hover:bg-yellow-400 transition">Explore Our Blends</a>
     </div>
-    <!-- Overlay to darken background -->
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-20">
+  <section id="about" class="py-20 vintage-border bg-gray-900 bg-opacity-60 mx-4 md:mx-24 lg:mx-48">
     <div class="max-w-4xl mx-auto px-6">
       <h2 class="text-4xl font-bold text-center text-yellow-300 mb-8">Our Story</h2>
       <p class="text-lg leading-relaxed text-gray-300">Born from the heart of a veteran and rink rat, CrossCheck Coffee is more than just a brand—it’s a legacy forged in grit, sacrifice, and the sweat of the ice. Founded by Tommy Barron, a combat-tested infantryman and lifelong hockey enthusiast, we’re committed to fueling those who chase their passions with relentless dedication. From the roar of the crowd to the hush of pre-dawn pucks on ice, we know what it’s like to grind. Every bag of coffee we roast is a tribute to the grinders—the vets, the dads, the grinders who still live and bleed hockey. We’re not in this to get rich. We’re in this to give back.<br><br>Our mission: Serve up bold, unapologetic coffee that keeps you powered through the toughest shifts, the longest practices, and life’s biggest battles.</p>
@@ -81,99 +100,12 @@
   </section>
 
   <!-- Blends Section -->
-  <section id="blends" class="py-20 bg-gray-800">
+  <section id="blends" class="py-20 bg-gray-800 vintage-border mx-4 md:mx-24 lg:mx-48">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-4xl font-bold text-center text-yellow-300 mb-12">Our Blends</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Blend Card Example -->
         <div class="bg-gray-900 border border-yellow-700 rounded-xl overflow-hidden shadow-lg">
-          <img src="https://example.com/top_shelf_label.jpg" alt="Top Shelf Blend" class="w-full h-48 object-cover">
+          <img src="https://images.unsplash.com/photo-1585222515068-72083bbf114a?auto=format&fit=crop&w=800&q=60" alt="Top Shelf Blend" class="w-full h-48 object-cover">
           <div class="p-6">
-            <h3 class="text-2xl font-semibold text-white mb-2">Top Shelf</h3>
-            <p class="text-gray-400 mb-4">A bold medium roast with rich chocolate undertones and a smooth finish. Perfect for early mornings on the ice.</p>
-            <a href="/shop/top-shelf" class="inline-block bg-yellow-300 text-gray-900 font-semibold py-2 px-4 rounded hover:bg-yellow-400">Shop Now</a>
-          </div>
-        </div>
-        
-        <div class="bg-gray-900 border border-yellow-700 rounded-xl overflow-hidden shadow-lg">
-          <img src="https://example.com/goon_brew_label.jpg" alt="Goon Brew" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-semibold text-white mb-2">Goon Brew</h3>
-            <p class="text-gray-400 mb-4">Dark roast powerhouse with smoky notes and a robust punch. For those who aren’t afraid to mix it up.</p>
-            <a href="/shop/goon-brew" class="inline-block bg-yellow-300 text-gray-900 font-semibold py-2 px-4 rounded hover:bg-yellow-400">Shop Now</a>
-          </div>
-        </div>
-
-        <div class="bg-gray-900 border border-yellow-700 rounded-xl overflow-hidden shadow-lg">
-          <img src="https://example.com/cats_cup_label.jpg" alt="Cats Cup Blend" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-semibold text-white mb-2">Cats Cup</h3>
-            <p class="text-gray-400 mb-4">A South Florida-style dark roast inspired by the Panthers’ championship run. Bold, smooth, and a little bit wild.</p>
-            <a href="/shop/cats-cup" class="inline-block bg-yellow-300 text-gray-900 font-semibold py-2 px-4 rounded hover:bg-yellow-400">Shop Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Subscription Section -->
-  <section id="subscribe" class="py-20 woodgrain">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold text-yellow-300 mb-6">The Rec League Crew</h2>
-      <p class="text-lg text-gray-300 mb-8">Join our subscription service and never run out of coffee. Choose your favorite blends, pick your delivery frequency, and become part of the Crew. Plus, get early access to limited edition roasts and exclusive merch.</p>
-      <a href="/subscribe" class="bg-yellow-400 text-gray-900 font-bold py-3 px-8 rounded-lg hover:bg-yellow-500 transition">Join Now</a>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-gray-800">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center text-yellow-300 mb-8">Get In Touch</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <p class="text-gray-300 mb-4"><strong>Email:</strong> <a href="mailto:info@crosscheckcoffee.net" class="text-yellow-300 hover:underline">info@crosscheckcoffee.net</a></p>
-          <p class="text-gray-300 mb-4"><strong>Location:</strong> Boca Raton, FL</p>
-          <p class="text-gray-300">Follow us on social media:</p>
-          <div class="flex space-x-4 mt-2">
-            <a href="https://www.instagram.com/crosscheckcoffee" target="_blank" class="text-gray-300 hover:text-yellow-300">Instagram</a>
-            <a href="https://www.facebook.com/crosscheckcoffee" target="_blank" class="text-gray-300 hover:text-yellow-300">Facebook</a>
-            <a href="https://twitter.com/crosscheckcoffee" target="_blank" class="text-gray-300 hover:text-yellow-300">Twitter</a>
-          </div>
-        </div>
-        <form action="/contact-submit" method="POST" class="space-y-6">
-          <div>
-            <label for="name" class="block text-gray-300 mb-2">Name</label>
-            <input type="text" id="name" name="name" class="w-full px-4 py-2 bg-gray-700 text-white rounded" placeholder="Your Name" required>
-          </div>
-          <div>
-            <label for="email" class="block text-gray-300 mb-2">Email</label>
-            <input type="email" id="email" name="email" class="w-full px-4 py-2 bg-gray-700 text-white rounded" placeholder="you@example.com" required>
-          </div>
-          <div>
-            <label for="message" class="block text-gray-300 mb-2">Message</label>
-            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 bg-gray-700 text-white rounded" placeholder="Your message..." required></textarea>
-          </div>
-          <button type="submit" class="bg-yellow-400 text-gray-900 font-semibold py-3 px-6 rounded-lg hover:bg-yellow-500 transition">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 py-6 mt-20">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <p class="text-gray-500">&copy; 2025 CrossCheck Coffee. All Rights Reserved.</p>
-      <p class="text-gray-500 mt-2">Designed by CrossCheck Coffee | Vintage Hockey Aesthetic</p>
-    </div>
-  </footer>
-
-  <!-- Mobile Menu Toggle Script -->
-  <script>
-    const menuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
-</body>
-</html>
+            <h3 class="text-2xl font-semibold text-white mb-2">Top Shelf</n
